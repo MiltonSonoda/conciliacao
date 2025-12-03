@@ -393,6 +393,7 @@ begin
            .Replace(':DATAPAG1', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', edtDataInicial.Date)))
            .Replace(':DATAPAG2', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', edtDataFinal.Date)));
 
+  dsConciliacao.DataSet.DisableControls;
   BRFW.Database.FCerta40.Consulta
       .Atributos
          .SQL(VI_SQL)
@@ -400,6 +401,8 @@ begin
       .DataSource(dsConciliacao)
       .CacheSegundos(0)
       .Open(VC_TotalRegistros);
+  dsConciliacao.DataSet.Last;
+  dsConciliacao.DataSet.EnableControls;
 end;
 
 procedure TfrPrincipal._BuscarEGravarTransacoes;
@@ -474,5 +477,9 @@ class function TModelIntegracaoPedidoPago._CNPJS: TArray<String>;
 begin
 
 end;
+
+initialization
+   FormatSettings.ShortDateFormat:='dd/mm/yyyy';
+   FormatSettings.DecimalSeparator := '.';
 
 end.

@@ -2,7 +2,7 @@ object frPrincipal: TfrPrincipal
   Left = 0
   Top = 0
   Caption = 'ArtPharma - Concilia'#231#227'o Financeira'
-  ClientHeight = 516
+  ClientHeight = 576
   ClientWidth = 1126
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,36 +12,34 @@ object frPrincipal: TfrPrincipal
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object ProgressBar1: TProgressBar
     Left = 0
-    Top = 499
+    Top = 559
     Width = 1126
     Height = 17
     Align = alBottom
     TabOrder = 0
-    ExplicitWidth = 989
   end
   object pg: TPageControl
     Left = 0
     Top = 0
     Width = 1126
-    Height = 499
+    Height = 559
     ActivePage = tbPagamentos
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 989
     object tbPagamentos: TTabSheet
       Caption = 'Pagamentos'
       ImageIndex = 4
-      ExplicitWidth = 981
       object gdConciliacao: TwwDBGrid
         Left = 0
         Top = 0
         Width = 1118
-        Height = 430
+        Height = 490
         IniAttributes.Delimiter = ';;'
         IniAttributes.UnicodeIniFile = False
         TitleColor = clBtnFace
@@ -66,17 +64,14 @@ object frPrincipal: TfrPrincipal
         OnUpdateFooter = gdConciliacaoUpdateFooter
         FooterColor = clHighlightText
         OnAfterDrawCell = gdConciliacaoAfterDrawCell
-        ExplicitTop = 2
-        ExplicitWidth = 981
       end
       object Panel1: TPanel
         Left = 0
-        Top = 430
+        Top = 490
         Width = 1118
         Height = 41
         Align = alBottom
         TabOrder = 1
-        ExplicitWidth = 981
         DesignSize = (
           1118
           41)
@@ -94,7 +89,6 @@ object frPrincipal: TfrPrincipal
     object tbFiltros: TTabSheet
       Caption = 'Filtros'
       ImageIndex = 2
-      ExplicitWidth = 981
       object Button102: TButton
         Left = 732
         Top = 47
@@ -225,7 +219,6 @@ object frPrincipal: TfrPrincipal
       Caption = 'Legendas'
       ImageIndex = 3
       OnShow = TabSheet1Show
-      ExplicitWidth = 981
       object dg: TDrawGrid
         Left = 56
         Top = 48
