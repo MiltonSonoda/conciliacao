@@ -1,7 +1,7 @@
 object frPrincipal: TfrPrincipal
   Left = 0
   Top = 0
-  Caption = 'ArtPharma - Concilia'#231#227'o Financeira'
+  Caption = 'ArtPharma - Concilia'#231#227'o Financeira - [%s a %s]'
   ClientHeight = 576
   ClientWidth = 1126
   Color = clBtnFace
@@ -29,7 +29,7 @@ object frPrincipal: TfrPrincipal
     Top = 0
     Width = 1126
     Height = 559
-    ActivePage = tbPagamentos
+    ActivePage = tbFiltros
     Align = alClient
     TabOrder = 1
     object tbPagamentos: TTabSheet
@@ -64,6 +64,7 @@ object frPrincipal: TfrPrincipal
         OnUpdateFooter = gdConciliacaoUpdateFooter
         FooterColor = clHighlightText
         OnAfterDrawCell = gdConciliacaoAfterDrawCell
+        ExplicitTop = 2
       end
       object Panel1: TPanel
         Left = 0

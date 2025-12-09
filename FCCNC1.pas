@@ -86,6 +86,8 @@ type
     VC_Interval: integer;
     VC_IbernarInicio: TTime;
     VC_IbernarFim: TTime;
+    VC_DataInicial: TDateTime;
+    VC_DataFinal: TDateTime;
     procedure _OnErroPedidoPago(vMensagem: string);
     { Private declarations }
   public
@@ -96,6 +98,7 @@ var
   frPrincipal: TfrPrincipal;
 
 const
+  VU_FormCaption = 'ArtPharma - Conciliação Financeira - [%s a %s]';
 
 StatusFontColor: array[0..2] of TColor = (
   $00B0ECB0,     // verde
@@ -252,6 +255,8 @@ end;
 
 procedure TfrPrincipal.FormCreate(Sender: TObject);
 begin
+   VC_DataInicial := IncMonth(Now, -1);
+   VC_DataFinal   := Now;
    pg.ActivePage := tbPagamentos;
    BRFW := TController.New;
    _ConfigurarTimer;
@@ -384,15 +389,15 @@ var
 begin
    VI_SQL := 'SELECT * FROM VW_CONCILIACAO WHERE DATAPAG BETWEEN :DATAPAG1 AND :DATAPAG2 ';
 //      ' OR STATUS IN (''P'', ''N'') ';
-   if edtDataInicial.Date = 0 then
-      VI_SQL := VI_SQL
-           .Replace(':DATAPAG1', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', IncMonth(Date, -1))))
-           .Replace(':DATAPAG2', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', Now)))
-   else
-      VI_SQL := VI_SQL
-           .Replace(':DATAPAG1', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', edtDataInicial.Date)))
-           .Replace(':DATAPAG2', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', edtDataFinal.Date)));
-
+   if edtDataInicial.Date > 0 then
+   begin
+      VC_DataInicial := edtDataInicial.Date;
+      VC_DataFinal   := edtDataFinal.Date;
+   end;
+   Self.Caption := Format(VU_FormCaption, [DateToStr(VC_DataInicial), DateToStr(VC_DataFinal)]);
+   VI_SQL := VI_SQL
+        .Replace(':DATAPAG1', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', VC_DataInicial)))
+        .Replace(':DATAPAG2', QuotedStr(FormatDateTime('yyyy-mm-dd hh:nn:ss', VC_DataFinal)));
   dsConciliacao.DataSet.DisableControls;
   BRFW.Database.FCerta40.Consulta
       .Atributos

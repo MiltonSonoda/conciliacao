@@ -1,0 +1,14 @@
+- 13/11/2024
+
+Serviço em Python:
+
+Para ativar:
+Python nfeimportacaoService.py start 
+
+Para parar:
+Python nfeimportacaoService.py stop
+
+
+Está setado como Automático e reiniciar se falha.
+
+

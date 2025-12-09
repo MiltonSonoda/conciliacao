@@ -1,0 +1,359 @@
+2024-12-09 15:24:04,164 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2024-12-18 23:01:37,231 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-01-21 22:13:39,780 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-19 02:45:25,573 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\10140643000194\Entrada\2025\Fevereiro\42250236631607000117551000000825191124202571.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-19 02:59:53,491 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\23271638001134\Entrada\2025\Fevereiro\42250236631607000117551000000822891696813167.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-19 03:45:32,888 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\02028407000152\Entrada\2025\Fevereiro\29250201890228000167550010000069161801799336.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-19 23:35:31,698 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\23271638001134\Entrada\2025\Fevereiro\42250236631607000117551000000825791644573157.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 00:05:45,301 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\66261694000129\Entrada\2025\Fevereiro\42250236631607000117551000000825701344920972.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 00:20:51,586 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\02028407000152\Entrada\2025\Fevereiro\29250242021030000205550000000174341384910602.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 00:20:53,361 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\67947473000171\Entrada\2025\Fevereiro\42250236631607000117551000000826291585719425.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 00:36:02,471 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\05098018000191\Entrada\2025\Fevereiro\42250236631607000117551000000825551656561572.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 02:07:21,904 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\47545371000112\Entrada\2025\Fevereiro\42250236631607000117551000000824051726066055.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 03:53:27,652 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\56792997000114\Entrada\2025\Fevereiro\42250236631607000117551000000824801274865693.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 04:23:47,915 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\02907061000162\Entrada\2025\Fevereiro\52250202595624000124550020000794751000697020.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 04:54:27,924 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\01208269000120\Entrada\2025\Fevereiro\42250236631607000117551000000825241841075143.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 21:59:05,974 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\14760713000168\Entrada\2025\Fevereiro\33250243015537000219550020002935041756548461.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 22:14:10,240 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\01165329000175\Entrada\2025\Fevereiro\42250236631607000117551000000827571599476341.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 22:14:16,903 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\68887496000109\Entrada\2025\Fevereiro\42250236631607000117551000000827321360496233.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 22:29:23,983 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\02907061000162\Entrada\2025\Fevereiro\52250202107803001902550010000531971014220586.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 23:00:11,544 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\02269569000182\Entrada\2025\Fevereiro\42250236631607000117551000000815161530409892.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 23:46:47,849 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\47513205000800\Entrada\2025\Fevereiro\42250236631607000117551000000824621584542169.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 23:47:05,562 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\02904657000109\Entrada\2025\Fevereiro\42250235677373000186550010000013771701861861.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 23:47:09,175 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\05394443000128\Entrada\2025\Fevereiro\42250235677373000186550010000014071750494363.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-20 23:47:12,514 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\47513205000800\Entrada\2025\Fevereiro\41250213549636000139550010000472231872746842.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 00:32:48,158 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\58867144000120\Entrada\2025\Fevereiro\42250236631607000117551000000823191624946374.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 00:33:07,049 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\58867144000120\Entrada\2025\Fevereiro\42250236631607000117551000000825741097113609.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 01:03:34,207 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\04540131000112\Entrada\2025\Fevereiro\42250236631607000117551000000814291318195810.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 01:34:02,081 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\07414927000117\Entrada\2025\Fevereiro\42250236631607000117551000000827921201982301.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 03:50:46,703 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\23819492000147\Entrada\2025\Fevereiro\42250236631607000117551000000827521356907324.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 03:50:58,285 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\00548620000160\Entrada\2025\Fevereiro\35250222741129000193550000000072121210002158.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 03:51:03,771 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\00548620000160\Entrada\2025\Fevereiro\42250236631607000117551000000823301972069038.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 04:21:05,425 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\02904657000109\Entrada\2025\Fevereiro\41250284850544000132550010000123061728136457.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 05:06:23,374 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\05339988000131\Entrada\2025\Fevereiro\42250236631607000117551000000822741037435069.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 07:06:49,210 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\04272073000193\Entrada\2025\Fevereiro\29250225447423000185550010000020441066745203.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 07:21:52,875 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\04272073000193\Entrada\2025\Fevereiro\42250236631607000117551000000826311078082688.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 07:52:56,580 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\07085209000144\Entrada\2025\Fevereiro\42250236631607000117551000000828121694289999.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 08:38:24,289 - ERROR - Erro não tratado: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)') - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\01745959000119\Entrada\2025\Fevereiro\42250236631607000117551000000822471324202000.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]A transação foi encerrada no gatilho. O lote foi anulado. (3609) (SQLParamData)')
+2025-02-21 09:39:21,954 - ERROR - Erro não tratado: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)") - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\03903387000184\Entrada\2025\Fevereiro\31250232606617000141550010000362641067911590.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)")
+2025-02-21 09:39:22,240 - ERROR - Erro não tratado: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)") - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\03903387000184\Entrada\2025\Fevereiro\31250260431715000120550000001223201600916410.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)")
+2025-02-21 09:39:23,801 - ERROR - Erro não tratado: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)") - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\03903387000184\Entrada\2025\Fevereiro\35250235129141000193550010000227311392865045.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)")
+2025-02-21 09:39:24,093 - ERROR - Erro não tratado: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)") - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\03903387000184\Entrada\2025\Fevereiro\35250235261683000115550010001004561662353461.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)")
+2025-02-21 09:39:28,273 - ERROR - Erro não tratado: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)") - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\03903387000184\Entrada\2025\Fevereiro\35250238408742000123550020000635401001189473.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)")
+2025-02-21 09:39:28,528 - ERROR - Erro não tratado: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)") - Arquivo: C:\Users\Administrador.WIN-C4842SFD7Q9\HUB SIEG\XML\NF-es\03903387000184\Entrada\2025\Fevereiro\35250243365816000121550010004069091000000019.xml
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'VRDESCONTO' inválido. (207) (SQLParamData)")
+2025-03-01 18:17:16,273 - ERROR - Erro crítico: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 185, in processarArquivo
+    shutil.copy(arquivo, arquivo_processado)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrador.WIN-C4842SFD7Q9\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 428, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrador.WIN-C4842SFD7Q9\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ~~~~^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Administrador.WIN-C4842SFD7Q9\\HUB SIEG - PROCESSADOS\\XML\\NF-es\\teste\\32250236176911000111550010001569931733134779 - Copia (2).xml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 196, in processarArquivo
+    raise Exception(error)
+Exception: [Errno 2] No such file or directory: 'C:\\Users\\Administrador.WIN-C4842SFD7Q9\\HUB SIEG - PROCESSADOS\\XML\\NF-es\\teste\\32250236176911000111550010001569931733134779 - Copia (2).xml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 211, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
+2025-03-01 18:34:30,553 - ERROR - Erro crítico: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 188, in processarArquivo
+    shutil.copy(arquivo, arquivo_processado)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrador.WIN-C4842SFD7Q9\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 428, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrador.WIN-C4842SFD7Q9\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ~~~~^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Administrador.WIN-C4842SFD7Q9\\HUB SIEG - PROCESSADOS\\XML\\NF-es\\teste\\35250238408742000123550020000645401001145020.xml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 199, in processarArquivo
+    raise Exception(error)
+Exception: [Errno 2] No such file or directory: 'C:\\Users\\Administrador.WIN-C4842SFD7Q9\\HUB SIEG - PROCESSADOS\\XML\\NF-es\\teste\\35250238408742000123550020000645401001145020.xml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 214, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
+2025-03-01 18:40:54,173 - ERROR - Erro crítico: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 188, in processarArquivo
+    shutil.copy(arquivo, arquivo_processado)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrador.WIN-C4842SFD7Q9\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 428, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrador.WIN-C4842SFD7Q9\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ~~~~^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Administrador.WIN-C4842SFD7Q9\\HUB SIEG - PROCESSADOS\\XML\\NF-es\\teste\\35250256215999000817550010009922851878167461.xml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 199, in processarArquivo
+    raise Exception(error)
+Exception: [Errno 2] No such file or directory: 'C:\\Users\\Administrador.WIN-C4842SFD7Q9\\HUB SIEG - PROCESSADOS\\XML\\NF-es\\teste\\35250256215999000817550010009922851878167461.xml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 214, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
+2025-03-01 19:00:00,695 - ERROR - Erro crítico: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 175, in processarArquivo
+    raise Exception('erro teste')
+Exception: erro teste
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 197, in processarArquivo
+    raise Exception(error)
+Exception: erro teste
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Deploy\BRSoft\NF-e Importação\nfeimportacaoService.py", line 212, in processarArquivo
+    cur.execute(sql, valores)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+pyodbc.ProgrammingError: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Nome de coluna 'CONTEUDO' inválido. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Não foi possível preparar uma ou mais instruções. (8180)")
