@@ -3,7 +3,6 @@ import sys
 import time
 import logging
 import datetime as dt
-import configparser
 
 import requests
 from requests.exceptions import ReadTimeout, ConnectionError
@@ -15,34 +14,14 @@ import servicemanager
 
 
 # =====================
-# CONFIGURAÇÕES PADRÃO
+# CONFIGURAÇÕES BÁSICAS
 # =====================
 
-# Esses valores serão sobrescritos pelo INI (se existir)
-API_BASE = "http://localhost:1126/pedidopago/v1"
-ACCESS_TOKEN_PATH = "/accesstoken/obter"
-TRANSACOES_PATH = "/transacoes/gravar"
+API_BASE = "http://localhost:1125/pedidopago/v1"
 
 INTERVALO_SEGUNDOS = 5 * 60  # 5 minutos
 HORA_INICIO = dt.time(8, 0)  # 08:00
 HORA_FIM = dt.time(20, 0)    # 20:00
-
-# Timeouts padrão (podem ser fixos ou você pode mover para INI se quiser)
-CONNECT_TIMEOUT = 5
-READ_TIMEOUT_TOKEN = 30
-READ_TIMEOUT_TRANSACOES = 60
-
-
-def get_base_dir():
-    """Retorna a pasta onde o script está localizado."""
-    try:
-        return os.path.dirname(os.path.abspath(__file__))
-    except Exception:
-        # fallback raro, mas deixa algo funcional
-        return os.getcwd()
-
-
-BASE_DIR = get_base_dir()
 
 
 def configurar_logging():
@@ -50,7 +29,13 @@ def configurar_logging():
     Configura o logging na pasta do script.
     Em serviço, o working dir não é o do script, então usamos __file__.
     """
-    log_path = os.path.join(BASE_DIR, "FCCNCService.log")
+    try:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+    except Exception:
+        # fallback raro (mas deixa algo funcional)
+        base_dir = os.getcwd()
+
+    log_path = os.path.join(base_dir, "FCCNCService.log")
 
     logging.basicConfig(
         filename=log_path,
@@ -61,75 +46,8 @@ def configurar_logging():
     logging.info("Logging inicializado. Arquivo: %s", log_path)
 
 
-def carregar_config_ini():
-    """
-    Lê FCCNCService.ini na pasta do script e sobrescreve os valores globais.
-    Se não existir ou houver erro, usa os defaults.
-    """
-    global API_BASE, ACCESS_TOKEN_PATH, TRANSACOES_PATH
-    global INTERVALO_SEGUNDOS, HORA_INICIO, HORA_FIM
-
-    ini_path = os.path.join(BASE_DIR, "FCCNCService.ini")
-
-    if not os.path.exists(ini_path):
-        logging.warning("Arquivo de configuração INI não encontrado: %s. "
-                        "Usando configurações padrão.", ini_path)
-        return
-
-    config = configparser.ConfigParser()
-    try:
-        config.read(ini_path, encoding="utf-8")
-    except Exception as e:
-        logging.error("Erro ao ler INI %s: %s. Usando configurações padrão.",
-                      ini_path, e, exc_info=True)
-        return
-
-    logging.info("Lendo configurações do INI: %s", ini_path)
-
-    # ----- Seção [API] -----
-    if config.has_section("API"):
-        API_BASE = config.get("API", "BaseUrl", fallback=API_BASE).rstrip("/")
-
-        ACCESS_TOKEN_PATH = config.get(
-            "API", "AccessTokenPath", fallback=ACCESS_TOKEN_PATH
-        )
-        TRANSACOES_PATH = config.get(
-            "API", "TransacoesPath", fallback=TRANSACOES_PATH
-        )
-
-    # ----- Seção [Schedule] -----
-    if config.has_section("Schedule"):
-        INTERVALO_SEGUNDOS = config.getint(
-            "Schedule", "IntervalSeconds", fallback=INTERVALO_SEGUNDOS
-        )
-
-        inicio_str = config.get("Schedule", "BusinessStart", fallback="08:00")
-        fim_str = config.get("Schedule", "BusinessEnd", fallback="20:00")
-
-        try:
-            HORA_INICIO = dt.datetime.strptime(inicio_str, "%H:%M").time()
-        except Exception:
-            logging.error("Valor inválido para BusinessStart: %s. Usando 08:00.",
-                          inicio_str, exc_info=True)
-            HORA_INICIO = dt.time(8, 0)
-
-        try:
-            HORA_FIM = dt.datetime.strptime(fim_str, "%H:%M").time()
-        except Exception:
-            logging.error("Valor inválido para BusinessEnd: %s. Usando 20:00.",
-                          fim_str, exc_info=True)
-            HORA_FIM = dt.time(20, 0)
-
-    logging.info(
-        "Configuração final: API_BASE=%s, ACCESS_TOKEN_PATH=%s, "
-        "TRANSACOES_PATH=%s, INTERVALO_SEGUNDOS=%s, HORA_INICIO=%s, HORA_FIM=%s",
-        API_BASE, ACCESS_TOKEN_PATH, TRANSACOES_PATH,
-        INTERVALO_SEGUNDOS, HORA_INICIO, HORA_FIM
-    )
-
-
 def eh_horario_comercial(agora: dt.datetime) -> bool:
-    """Retorna True se estiver entre HORA_INICIO e HORA_FIM."""
+    """Retorna True se estiver entre 08:00 e 20:00."""
     hora_atual = agora.time()
     return HORA_INICIO <= hora_atual < HORA_FIM
 
@@ -139,16 +57,15 @@ def obter_access_token():
     Consome a API de access token.
     Retorna o JSON/texto em caso de sucesso, ou None em caso de falha.
     """
-    url = f"{API_BASE}{ACCESS_TOKEN_PATH}"
+    url = f"{API_BASE}/accesstoken/obter"
     logging.info(f"Chamando: GET {url}")
 
     try:
         # timeout=(conexão, leitura) em segundos
-        resp = requests.get(url, timeout=(CONNECT_TIMEOUT, READ_TIMEOUT_TOKEN))
+        resp = requests.get(url, timeout=(5, 30))
         resp.raise_for_status()
     except ReadTimeout:
-        logging.warning("Timeout ao obter access token (nenhuma resposta em até %ss).",
-                        READ_TIMEOUT_TOKEN)
+        logging.warning("Timeout ao obter access token (nenhuma resposta em até 30s).")
         return None
     except ConnectionError as e:
         logging.error(f"Falha de conexão ao obter access token: {e}")
@@ -171,17 +88,14 @@ def gravar_transacoes():
     Consome a API de gravação de transações.
     Retorna o JSON/texto em caso de sucesso, ou None em caso de falha.
     """
-    url = f"{API_BASE}{TRANSACOES_PATH}"
+    url = f"{API_BASE}/transacoes/gravar"
     logging.info(f"Chamando: POST {url}")
 
     try:
-        resp = requests.post(url, timeout=(CONNECT_TIMEOUT, READ_TIMEOUT_TRANSACOES))
+        resp = requests.post(url, timeout=(5, 60))
         resp.raise_for_status()
     except ReadTimeout:
-        logging.warning(
-            "Timeout ao gravar transações (nenhuma resposta em até %ss).",
-            READ_TIMEOUT_TRANSACOES,
-        )
+        logging.warning("Timeout ao gravar transações (nenhuma resposta em até 60s).")
         return None
     except ConnectionError as e:
         logging.error(f"Falha de conexão ao gravar transações: {e}")
@@ -204,7 +118,7 @@ class FCCNCService(win32serviceutil.ServiceFramework):
     _svc_display_name_ = "FCCNC Integração PedidoPago"
     _svc_description_ = (
         "Serviço que obtém AccessToken e grava transações do PedidoPago "
-        "a cada intervalo configurado, gravando somente em horário comercial."
+        "a cada 5 minutos, gravando somente em horário comercial (08h às 20h)."
     )
 
     def __init__(self, args):
@@ -224,8 +138,6 @@ class FCCNCService(win32serviceutil.ServiceFramework):
         """Entrada principal do serviço."""
         configurar_logging()
         logging.info("FCCNCService iniciado via SCM.")
-
-        carregar_config_ini()
 
         # Registra no Event Viewer
         servicemanager.LogMsg(

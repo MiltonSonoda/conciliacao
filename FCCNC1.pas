@@ -34,15 +34,10 @@ type
     TabSheet1: TTabSheet;
     dg: TDrawGrid;
     Button102: TButton;
-    tmTransacoes: TTimer;
     GroupBox1: TGroupBox;
     Label4: TLabel;
     edDataTransacoes: TDateEdit;
     Button100: TButton;
-    edInterval: TEdit;
-    Label3: TLabel;
-    btSalvarInterval: TBitBtn;
-    ckTransacoes: TCheckBox;
     GroupBox2: TGroupBox;
     Label1: TLabel;
     Label2: TLabel;
@@ -57,6 +52,40 @@ type
     alRegistrar: TAction;
     tbConciliacao: TFDMemTable;
     MainMenu1: TMainMenu;
+    tbItens: TFDMemTable;
+    dsItens: TDataSource;
+    tbConciliacaoID: TIntegerField;
+    tbConciliacaoSOLICITACAO: TIntegerField;
+    tbConciliacaoCLIENTE: TStringField;
+    tbConciliacaoORCAMENTO: TStringField;
+    tbConciliacaoDOCUMENTO: TStringField;
+    tbConciliacaoPEDIDO: TStringField;
+    tbConciliacaoBANDEIRA: TStringField;
+    tbConciliacaoFORMAPAG: TStringField;
+    tbConciliacaoADQTE: TStringField;
+    tbConciliacaoTID: TIntegerField;
+    tbConciliacaoDATACRIA: TDateTimeField;
+    tbConciliacaoDATAPAG: TDateTimeField;
+    tbConciliacaoVALORPAG: TCurrencyField;
+    tbConciliacaoSTATUSPAG: TStringField;
+    tbConciliacaoSTATUS: TStringField;
+    tbConciliacaoDIFVALOR: TCurrencyField;
+    tbItensSOLICITACAO: TIntegerField;
+    tbConciliacaoFILIAL: TStringField;
+    tbItensTPITM: TStringField;
+    tbItensCDFIL: TIntegerField;
+    tbItensNRORC: TIntegerField;
+    tbItensSERIEO: TStringField;
+    tbItensDESCRICAOWEB: TStringField;
+    tbItensQUANT: TIntegerField;
+    tbItensPRUNI: TCurrencyField;
+    tbItensVRTOT: TCurrencyField;
+    tbItensPTDSC: TFloatField;
+    tbItensVRDSC: TCurrencyField;
+    tbItensVRTXA: TCurrencyField;
+    tbItensVRLIQ: TCurrencyField;
+    tbConciliacaoIT: TStringField;
+    tbConciliacaoCK: TIntegerField;
     procedure Button100Click(Sender: TObject);
     procedure Button102Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -65,11 +94,6 @@ type
       State: TGridDrawState);
     procedure TabSheet1Show(Sender: TObject);
     procedure _BuscarEGravarTransacoes;
-    procedure ckTransacoesClick(Sender: TObject);
-    procedure tmTransacoesTimer(Sender: TObject);
-    procedure edIntervalChange(Sender: TObject);
-    procedure _ConfigurarTimer;
-    procedure btSalvarIntervalClick(Sender: TObject);
     procedure _AbrirTransacoesGravadas;
     procedure gdConciliacaoCalcCellColors(Sender: TObject; Field: TField;
       State: TGridDrawState; Highlight: Boolean; AFont: TFont; ABrush: TBrush);
@@ -80,6 +104,7 @@ type
     procedure gdConciliacaoUpdateFooter(Sender: TObject);
     procedure gdConciliacaoAfterDrawCell(Sender: TwwCustomDBGrid;
       DrawCellInfo: TwwCustomDrawGridCellInfo);
+    procedure tbConciliacaoCKChange(Sender: TField);
   private
     BRFW: IController;
     VC_TotalRegistros: integer;
@@ -100,19 +125,18 @@ var
 const
   VU_FormCaption = 'ArtPharma - Conciliação Financeira - [%s a %s]';
 
-StatusFontColor: array[0..2] of TColor = (
+StatusFontColor: array[0..3] of TColor = (
   $00B0ECB0,     // verde
   $008484FF,     // vermelho
-  $009DF5FF   // amarelo
-
+  $009DF5FF,     // amarelo
+  $00F2CCFF      // roxo
 );
 
-StatusCode: array[0..2] of string = (
-  'K', 'C', 'D'
+StatusCode: array[0..3] of string = (
+  'K', 'C', 'D', 'F'
 );
 
-  StatusDescricao: TArray<string> = ['Registrados no caixa', 'Não cadastrada', 'Diferença de valor'];
-
+  StatusDescricao: TArray<string> = ['Registrados no caixa', 'Não cadastrada', 'Diferença de valor até 5%', 'Diferença de valor' ];
 
 implementation
 uses BRFW.Lib;
@@ -120,6 +144,9 @@ uses BRFW.Lib;
 {$R *.dfm}
 
 procedure TfrPrincipal.alRegistrarExecute(Sender: TObject);
+var
+  VId: Variant;
+
 begin
    if MessageDlg(Format('Confirma o registro no Caixa da Solicitação %d em %s?',
        [dsConciliacao.DataSet.FieldByName('SOLICITACAO').AsInteger,
@@ -137,7 +164,24 @@ begin
                      .OnError(_OnErroPedidoPago)
                   .&End
                   .ExecuteHum;
-   TFDMemTable(dsConciliacao.DataSet).Refresh;
+
+   //dsConciliacao.DataSet.edit;
+   //dsConciliacao.DataSet.FieldByName('STATUS').AsString := 'K';
+   //dsConciliacao.DataSet.POST;
+   //gdConciliacao.Invalidate;
+
+  VId := dsConciliacao.DataSet.FieldByName('ID').Value; // sua PK
+
+  dsConciliacao.DataSet.DisableControls;
+  try
+    dsConciliacao.DataSet.Refresh;  // ou Requery, dependendo do seu dataset
+    dsConciliacao.DataSet.Locate('ID', VId, []);
+  finally
+    dsConciliacao.DataSet.EnableControls;
+  end;
+
+  gdConciliacao.Invalidate;
+
    Showmessage('Registro efetuado com sucesso.');
 end;
 
@@ -160,28 +204,11 @@ begin
     A.Enabled := False;
 end;
 
-procedure TfrPrincipal.btSalvarIntervalClick(Sender: TObject);
-begin
-   BRFW.Configuracao.App
-       .Atributos
-          .Secao('TRANSACOES')
-          .Chave('INTERVALO')
-          .Valor(StrToIntDef(edInterval.Text, 5))
-       .&End
-       .Operacoes
-       .Gravar;
-end;
-
 procedure TfrPrincipal.Button100Click(Sender: TObject);
 var
    VI_Transacoes: TJsonArray;
    VI_Cursor: TCursor;
 begin
-   if ckTransacoes.Checked then
-   begin
-      Showmessage('Desative o Temporizador.');
-      exit;
-   end;
    VI_Transacoes := TJsonArray.Create;
    VI_Cursor := Screen.Cursor;
    Screen.Cursor := crHourGlass;
@@ -231,11 +258,6 @@ begin
    end;
 end;
 
-procedure TfrPrincipal.ckTransacoesClick(Sender: TObject);
-begin
-   tmTransacoes.enabled := ckTransacoes.Checked;
-end;
-
 procedure TfrPrincipal.dgDrawCell(Sender: TObject; ACol, ARow: Integer; Rect: TRect;
   State: TGridDrawState);
 begin
@@ -247,19 +269,13 @@ begin
   end;
 end;
 
-procedure TfrPrincipal.edIntervalChange(Sender: TObject);
-begin
-   ckTransacoes.Checked := false;
-   tmTransacoes.Interval := StrToIntDef(edInterval.Text, 5) * 60 * 1000;
-end;
-
 procedure TfrPrincipal.FormCreate(Sender: TObject);
 begin
-   VC_DataInicial := IncMonth(Now, -1);
+   //VC_DataInicial := IncMonth(Now, -1);
+   VC_DataInicial := Now -10;
    VC_DataFinal   := Now;
    pg.ActivePage := tbPagamentos;
    BRFW := TController.New;
-   _ConfigurarTimer;
    _AbrirTransacoesGravadas;
 end;
 
@@ -269,27 +285,12 @@ begin
    dg.ColWidths[0] := dg.ClientWidth - dg.GridLineWidth;;
 end;
 
-procedure TfrPrincipal.tmTransacoesTimer(Sender: TObject);
-var
-  Agora, ProximoHorario: TDateTime;
+procedure TfrPrincipal.tbConciliacaoCKChange(Sender: TField);
 begin
-  Agora := Now;
-  if (Time >= EncodeTime(20, 0, 0, 0)) or (Time < EncodeTime(8, 0, 0, 0)) then
-  begin
-    tmTransacoes.Enabled := False;
-    if Time >= EncodeTime(20, 0, 0, 0) then
-      ProximoHorario := (Date + 1) + EncodeTime(8,0,0,0)   // amanhã às 08:00
+    if tbConciliacaoCK.Value = 1 then
+       gdConciliacao.SelectRecord
     else
-      ProximoHorario := Date + EncodeTime(8,0,0,0);        // hoje às 08:00
-    tmTransacoes.Interval :=
-      MilliSecondsBetween(Agora, ProximoHorario);
-
-    tmTransacoes.Enabled := True;
-
-    Exit;
-  end;
-  _BuscarEGravarTransacoes;
-  tmTransacoes.Interval := StrToIntDef(edInterval.Text, 5) * 60 * 1000;
+       gdConciliacao.UnSelectRecord;
 end;
 
 procedure TfrPrincipal.gdConciliacaoAfterDrawCell(Sender: TwwCustomDBGrid;
@@ -387,7 +388,27 @@ procedure TfrPrincipal._AbrirTransacoesGravadas;
 var
    VI_SQL: string;
 begin
-   VI_SQL := 'SELECT * FROM VW_CONCILIACAO WHERE DATAPAG BETWEEN :DATAPAG1 AND :DATAPAG2 ';
+   VI_SQL := 'SELECT ' +
+   ' '''' AS IT,     ' +
+   ' 0    AS CK,     ' +
+   ' ID,             ' +
+   ' FILIAL,         ' +
+   ' SOLICITACAO,    ' +
+   ' CLIENTE,        ' +
+   ' ORCAMENTO,      ' +
+   ' DOCUMENTO,      ' +
+   ' PEDIDO,         ' +
+   ' FORMAPAG,       ' +
+   ' BANDEIRA,       ' +
+   ' ADQTE,          ' +
+   ' TID,            ' +
+   ' DATACRIA,       ' +
+   ' DATAPAG,        ' +
+   ' VALORPAG,       ' +
+   ' STATUSPAG,      ' +
+   ' STATUS,         ' +
+   ' DIFVALOR        ' +
+   ' FROM VW_CONCILIACAO WHERE DATAPAG BETWEEN :DATAPAG1 AND :DATAPAG2 ';
 //      ' OR STATUS IN (''P'', ''N'') ';
    if edtDataInicial.Date > 0 then
    begin
@@ -425,44 +446,6 @@ begin
    finally
       VI_Transacoes.DisposeOf;
    end;
-end;
-
-procedure TfrPrincipal._ConfigurarTimer;
-var
-   VI_Interval: integer;
-begin
-   tmTransacoes.Enabled := false;
-   BRFW.Configuracao.App
-       .Atributos
-          .Secao('TRANSACOES')
-          .Chave('INTERVALO')
-          .Padrao(5)
-       .&End
-       .Operacoes
-         .Ler(VI_Interval)
-       .&End
-       .Atributos
-          .Chave('IBERNAR_INICIO')
-          .Padrao(StrToTime('00:01'))
-       .&End
-       .Operacoes
-         .Ler(VC_IbernarInicio)
-       .&End
-       .Atributos
-          .Chave('IBERNAR_FIM')
-          .Padrao(StrToTime('03:00'))
-       .&End
-       .Operacoes
-         .Ler(VC_IbernarFim)
-       .&End;
-
-   // armazena em minutos
-   // timer.interval em milisegundos.
-   VC_Interval := VI_Interval * 60 * 1000;
-   tmTransacoes.Interval := VC_Interval;
-   //
-   tmTransacoes.Enabled := true;
-   //
 end;
 
 procedure TfrPrincipal._OnErroPedidoPago(vMensagem: string);

@@ -1,14 +1,14 @@
-- 13/11/2024
+- 09/12/2025
 
-Serviço em Python:
+Serviï¿½o em Python:
 
 Para ativar:
-Python nfeimportacaoService.py start 
+Python FCCNCService.py start 
 
 Para parar:
-Python nfeimportacaoService.py stop
+Python FCCNCService.py stop
 
 
-Está setado como Automático e reiniciar se falha.
+Estï¿½ setado como Automï¿½tico e reiniciar se falha.
 
 

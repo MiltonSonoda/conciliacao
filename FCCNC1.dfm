@@ -29,7 +29,7 @@ object frPrincipal: TfrPrincipal
     Top = 0
     Width = 1126
     Height = 559
-    ActivePage = tbFiltros
+    ActivePage = tbPagamentos
     Align = alClient
     TabOrder = 1
     object tbPagamentos: TTabSheet
@@ -40,16 +40,37 @@ object frPrincipal: TfrPrincipal
         Top = 0
         Width = 1118
         Height = 490
+        ControlType.Strings = (
+          'CK;CheckBox;1;0'
+          'IT;CustomEdit;wwExpandButton1;F')
+        Selected.Strings = (
+          'ID'#9'10'#9'ID'#9#9
+          'FILIAL'#9'10'#9'FILIAL'#9#9
+          'SOLICITACAO'#9'10'#9'SOLICITACAO'#9#9
+          'CLIENTE'#9'30'#9'CLIENTE'#9#9
+          'ORCAMENTO'#9'10'#9'ORCAMENTO'#9#9
+          'DOCUMENTO'#9'11'#9'DOCUMENTO'#9#9
+          'PEDIDO'#9'10'#9'PEDIDO'#9#9
+          'FORMAPAG'#9'20'#9'FORMAPAG'#9#9
+          'BANDEIRA'#9'20'#9'BANDEIRA'#9#9
+          'ADQTE'#9'20'#9'ADQTE'#9#9
+          'TID'#9'10'#9'TID'#9#9
+          'DATACRIA'#9'18'#9'DATACRIA'#9#9
+          'DATAPAG'#9'18'#9'DATAPAG'#9#9
+          'VALORPAG'#9'10'#9'VALORPAG'#9#9
+          'DIFVALOR'#9'10'#9'DIFVALOR'#9#9
+          'STATUSPAG'#9'10'#9'STATUSPAG'#9#9
+          'STATUS'#9'1'#9'STATUS'#9'T')
         IniAttributes.Delimiter = ';;'
         IniAttributes.UnicodeIniFile = False
         TitleColor = clBtnFace
         FixedCols = 4
         ShowHorzScrollBar = True
+        EditControlOptions = [ecoCheckboxSingleClick, ecoSearchOwnerForm]
         Align = alClient
         DataSource = dsConciliacao
         KeyOptions = []
-        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgWordWrap, dgShowFooter, dgFixedResizable, dgFixedEditable, dgFixedProportionalResize]
-        ReadOnly = True
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgWordWrap, dgMultiSelect, dgShowFooter, dgFixedResizable, dgFixedEditable, dgFixedProportionalResize]
         TabOrder = 0
         TitleAlignment = taLeftJustify
         TitleFont.Charset = DEFAULT_CHARSET
@@ -59,12 +80,12 @@ object frPrincipal: TfrPrincipal
         TitleFont.Style = []
         TitleLines = 1
         TitleButtons = True
+        UseTFields = False
         OnCalcCellColors = gdConciliacaoCalcCellColors
         OnTitleButtonClick = gdConciliacaoTitleButtonClick
         OnUpdateFooter = gdConciliacaoUpdateFooter
         FooterColor = clHighlightText
         OnAfterDrawCell = gdConciliacaoAfterDrawCell
-        ExplicitTop = 2
       end
       object Panel1: TPanel
         Left = 0
@@ -109,21 +130,14 @@ object frPrincipal: TfrPrincipal
         TabOrder = 1
         object Label4: TLabel
           Left = 24
-          Top = 33
+          Top = 56
           Width = 73
           Height = 13
           Caption = 'Data espec'#237'fica'
         end
-        object Label3: TLabel
-          Left = 167
-          Top = 65
-          Width = 37
-          Height = 13
-          Caption = 'minutos'
-        end
         object edDataTransacoes: TDateEdit
           Left = 124
-          Top = 30
+          Top = 53
           Width = 135
           Height = 21
           NumGlyphs = 2
@@ -131,41 +145,12 @@ object frPrincipal: TfrPrincipal
         end
         object Button100: TButton
           Left = 286
-          Top = 24
+          Top = 47
           Width = 209
           Height = 33
           Caption = 'Buscar e salvar transa'#231#245'es'
-          TabOrder = 4
-          OnClick = Button100Click
-        end
-        object edInterval: TEdit
-          Left = 126
-          Top = 62
-          Width = 35
-          Height = 21
           TabOrder = 1
-          Text = '5'
-          OnChange = edIntervalChange
-        end
-        object btSalvarInterval: TBitBtn
-          Left = 216
-          Top = 62
-          Width = 41
-          Height = 25
-          Caption = 'Salvar'
-          TabOrder = 2
-          OnClick = btSalvarIntervalClick
-        end
-        object ckTransacoes: TCheckBox
-          Left = 286
-          Top = 70
-          Width = 97
-          Height = 17
-          Caption = 'Temporizador'
-          Checked = True
-          State = cbChecked
-          TabOrder = 3
-          OnClick = ckTransacoesClick
+          OnClick = Button100Click
         end
       end
       object GroupBox2: TGroupBox
@@ -227,7 +212,7 @@ object frPrincipal: TfrPrincipal
         Height = 137
         ColCount = 2
         FixedCols = 0
-        RowCount = 3
+        RowCount = 4
         FixedRows = 0
         TabOrder = 0
         OnDrawCell = dgDrawCell
@@ -235,16 +220,10 @@ object frPrincipal: TfrPrincipal
     end
   end
   object dsConciliacao: TDataSource
+    AutoEdit = False
     DataSet = tbConciliacao
-    Left = 416
-    Top = 112
-  end
-  object tmTransacoes: TTimer
-    Enabled = False
-    Interval = 300000
-    OnTimer = tmTransacoesTimer
-    Left = 828
-    Top = 232
+    Left = 424
+    Top = 128
   end
   object ActionList1: TActionList
     Left = 420
@@ -263,11 +242,155 @@ object frPrincipal: TfrPrincipal
     UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
-    Left = 500
-    Top = 120
+    Left = 492
+    Top = 128
+    object tbConciliacaoIT: TStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'IT'
+      Size = 1
+    end
+    object tbConciliacaoCK: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'CK'
+      OnChange = tbConciliacaoCKChange
+    end
+    object tbConciliacaoID: TIntegerField
+      DisplayWidth = 10
+      FieldName = 'ID'
+    end
+    object tbConciliacaoFILIAL: TStringField
+      DisplayWidth = 10
+      FieldName = 'FILIAL'
+      Size = 10
+    end
+    object tbConciliacaoSOLICITACAO: TIntegerField
+      DisplayWidth = 10
+      FieldName = 'SOLICITACAO'
+    end
+    object tbConciliacaoCLIENTE: TStringField
+      DisplayWidth = 30
+      FieldName = 'CLIENTE'
+      Size = 30
+    end
+    object tbConciliacaoORCAMENTO: TStringField
+      DisplayWidth = 10
+      FieldName = 'ORCAMENTO'
+      Size = 10
+    end
+    object tbConciliacaoDOCUMENTO: TStringField
+      DisplayWidth = 11
+      FieldName = 'DOCUMENTO'
+      Size = 11
+    end
+    object tbConciliacaoPEDIDO: TStringField
+      DisplayWidth = 10
+      FieldName = 'PEDIDO'
+      Size = 10
+    end
+    object tbConciliacaoFORMAPAG: TStringField
+      DisplayWidth = 20
+      FieldName = 'FORMAPAG'
+    end
+    object tbConciliacaoBANDEIRA: TStringField
+      DisplayWidth = 20
+      FieldName = 'BANDEIRA'
+    end
+    object tbConciliacaoADQTE: TStringField
+      DisplayWidth = 20
+      FieldName = 'ADQTE'
+    end
+    object tbConciliacaoTID: TIntegerField
+      DisplayWidth = 10
+      FieldName = 'TID'
+    end
+    object tbConciliacaoDATACRIA: TDateTimeField
+      DisplayWidth = 18
+      FieldName = 'DATACRIA'
+    end
+    object tbConciliacaoDATAPAG: TDateTimeField
+      DisplayWidth = 18
+      FieldName = 'DATAPAG'
+    end
+    object tbConciliacaoVALORPAG: TCurrencyField
+      DisplayWidth = 10
+      FieldName = 'VALORPAG'
+    end
+    object tbConciliacaoDIFVALOR: TCurrencyField
+      DisplayWidth = 10
+      FieldName = 'DIFVALOR'
+    end
+    object tbConciliacaoSTATUSPAG: TStringField
+      DisplayWidth = 10
+      FieldName = 'STATUSPAG'
+      Size = 10
+    end
+    object tbConciliacaoSTATUS: TStringField
+      DisplayWidth = 1
+      FieldName = 'STATUS'
+      Size = 1
+    end
   end
   object MainMenu1: TMainMenu
-    Left = 308
-    Top = 168
+    Left = 196
+    Top = 232
+  end
+  object tbItens: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 492
+    Top = 184
+    object tbItensSOLICITACAO: TIntegerField
+      FieldName = 'SOLICITACAO'
+    end
+    object tbItensTPITM: TStringField
+      FieldName = 'TPITM'
+      Size = 1
+    end
+    object tbItensCDFIL: TIntegerField
+      FieldName = 'CDFIL'
+    end
+    object tbItensNRORC: TIntegerField
+      FieldName = 'NRORC'
+    end
+    object tbItensSERIEO: TStringField
+      FieldName = 'SERIEO'
+      Size = 1
+    end
+    object tbItensDESCRICAOWEB: TStringField
+      FieldName = 'DESCRICAOWEB'
+      Size = 50
+    end
+    object tbItensQUANT: TIntegerField
+      FieldName = 'QUANT'
+    end
+    object tbItensPRUNI: TCurrencyField
+      FieldName = 'PRUNI'
+    end
+    object tbItensVRTOT: TCurrencyField
+      FieldName = 'VRTOT'
+    end
+    object tbItensPTDSC: TFloatField
+      FieldName = 'PTDSC'
+    end
+    object tbItensVRDSC: TCurrencyField
+      FieldName = 'VRDSC'
+    end
+    object tbItensVRTXA: TCurrencyField
+      FieldName = 'VRTXA'
+    end
+    object tbItensVRLIQ: TCurrencyField
+      FieldName = 'VRLIQ'
+    end
+  end
+  object dsItens: TDataSource
+    AutoEdit = False
+    DataSet = tbItens
+    Left = 424
+    Top = 192
   end
 end
